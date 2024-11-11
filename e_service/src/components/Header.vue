@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
 
 const isMobileMenuOpen = ref(false);
 
@@ -35,10 +36,16 @@ header {
             <a href="#use-case" class="text-white text-2xl hover:text-blue-600" @click="toggleMobileMenu">Cas d'usage</a>
             <a href="#docs" class="text-white text-2xl hover:text-blue-600" @click="toggleMobileMenu">Documentations</a>
             <a href="#contact" class="text-white text-2xl hover:text-blue-600" @click="toggleMobileMenu">Contact</a>
-            <button @click="toggleMobileMenu" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500">
+            <RouterLink to="../auth/Register">
+                <button @click="toggleMobileMenu" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500">
+                    Commencer
+                </button>
+            </RouterLink>
+        </nav>
+        <RouterLink to="../auth/Register">
+            <button class="hidden md:inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500">
                 Commencer
             </button>
-        </nav>
-        <button class="hidden md:inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500">Commencer</button>
+        </RouterLink>
     </header>
 </template>
